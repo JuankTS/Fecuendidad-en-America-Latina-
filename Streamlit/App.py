@@ -18,10 +18,8 @@ page_bg_img = '''
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # Cargar grafico de las tasas de fecundidad  de todos los paises
-with open('../Images/Fecundidad_sudanerica.html', 'r', encoding='utf-8') as file:
-    html_content = file.read()
-    
-st.components.v1.html(html_content, height=800)
+
+st.components.v1.html('https://github.com/JuankTS/Fecuendidad-en-America-Latina-/blob/b19b5f4173eacc0807ba17f31b25a27e1eff2f91/Images/Fecundidad_sudanerica.html', height=800)
 
 # Seleccionar pronostico por país
 countries = ['Argentina', 'Bolivia', 'Brazil', 'Chile', 'Colombia', 
@@ -30,6 +28,5 @@ countries = ['Argentina', 'Bolivia', 'Brazil', 'Chile', 'Colombia',
 pais = st.selectbox(label="Selecciona un país:",options=countries)
 
 if st.button('Mostrar'):
-    with open(f'../Images/forecast_{pais}.html', 'r', encoding='utf-8') as file:
-        forecast_html = file.read()
-    st.components.v1.html(forecast_html, height=800)
+    image=f'https://github.com/JuankTS/Fecuendidad-en-America-Latina-/blob/b19b5f4173eacc0807ba17f31b25a27e1eff2f91/Images/Fecundidad_{pais}.html'
+    st.components.v1.html(image, height=800)
