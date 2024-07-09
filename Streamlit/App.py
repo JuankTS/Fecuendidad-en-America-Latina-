@@ -1,4 +1,5 @@
 import streamlit as st
+import requests
 
 # Configurar la página
 st.set_page_config(
@@ -18,11 +19,17 @@ page_bg_img = '''
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # Cargar grafico de las tasas de fecundidad  de todos los paises
-# URL directa al archivo HTML en GitHub (en formato raw)
-file_url = 'https://raw.githubusercontent.com/JuankTS/Fecuendidad-en-America-Latina-/b19b5f4173eacc0807ba17f31b25a27e1eff2f91/Images/Fecundidad_sudanerica.html'
+fig = 'https://raw.githubusercontent.com/JuankTS/Fecuendidad-en-America-Latina-/main/Images/Fecundidad_sudanerica.html'
 
-# Mostrar el gráfico en Streamlit desde la URL
-st.components.v1.html(file_url, height=800)
+# Descargar el contenido HTML
+response = requests.get(fig)
+
+# Verificar si la descarga fue exitosa
+if response.status_code == 200:
+    html_content = response.text  # Obtener el contenido HTML como texto
+    st.components.v1.html(html_content, height=800)
+else:
+    st.error(f"Error al descargar el archivo HTML desde {fig}. Status code: {response.status_code}")
 
 # Seleccionar pronostico por país
 countries = ['Argentina', 'Bolivia', 'Brazil', 'Chile', 'Colombia', 
@@ -30,6 +37,11 @@ countries = ['Argentina', 'Bolivia', 'Brazil', 'Chile', 'Colombia',
 
 pais = st.selectbox(label="Selecciona un país:",options=countries)
 
-if st.button('Mostrar'):
-    image=f'https://raw.githubusercontent.com/JuankTS/Fecuendidad-en-America-Latina-/b19b5f4173eacc0807ba17f31b25a27e1eff2f91/Images/Fecundidad_{pais}.html'
-    st.components.v1.html(image, height=800)
+
+image=f'https://raw.githubusercontent.com/JuankTS/Fecuendidad-en-America-Latina-/main/Images/forecast_{pais}.html'
+resp = requests.get(image)
+if resp.status_code == 200:
+    html_content = resp.text  # Obtener el contenido HTML como texto
+    st.components.v1.html(html_content, height=800)
+else:
+    st.error(f"Error al descargar el archivo HTML desde {image}. Status code: {response.status_code}")
