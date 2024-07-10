@@ -29,6 +29,7 @@ p {
     color: white;
     text-align: justify;
 }
+
 </style>
 '''
 
@@ -65,14 +66,16 @@ st.markdown("""
             <li><strong>Impacto en la educación y desarrollo infantil</strong>: La inversión en educación y desarrollo infantil podría aumentar debido a una mayor disponibilidad de recursos por niño, pero también podría haber menos escuelas y recursos educativos disponibles a medida que disminuye la población infantil.</li>
         </ul>
     </div>
+    <br>
 """, unsafe_allow_html=True)
 
 # Cargar gráfico de las tasas de fecundidad de todos los países
+st.markdown("<h2 style='text-align: center; background-color: rgba(0, 0, 0, 0.7)'>Tasas de fecundidad en países Sudaméricanos</h2>", unsafe_allow_html=True)
 fig = 'https://raw.githubusercontent.com/JuankTS/Fecuendidad-en-America-Latina-/main/Images/Fecundidad_sudanerica.html'
 response = requests.get(fig)
 if response.status_code == 200:
-    html_content = response.text  # Obtener el contenido HTML como texto
-    st.components.v1.html(html_content, height=800)
+    img = response.text  # Obtener el contenido HTML como texto
+    st.components.v1.html(img, height=800)
 else:
     st.error(f"Error al descargar el archivo HTML desde {fig}. Status code: {response.status_code}")
 
@@ -101,3 +104,54 @@ if resp.status_code == 200:
     st.components.v1.html(html_content, height=800)
 else:
     st.error(f"Error al descargar el archivo HTML desde {image}. Status code: {resp.status_code}")
+
+st.markdown('''
+    <p style='text-align: center; background-color: rgba(0, 0, 0, 0.7); color: white; padding: 10px;'> 
+    Estos pronósticos fueron realizados con un modelo de suavizado exponencial con tendencia aditiva. 
+    Para más información, haga clic <a style='color: white;' href='https://www.ibm.com/docs/es/spss-statistics/saas?topic=modeler-custom-exponential-smoothing-models'>aquí</a>.
+    </p>
+    <br>
+''', unsafe_allow_html=True)
+
+st.markdown('''
+    <div style='background-color: rgba(0, 0, 0, 0.7); padding: 20px; border-radius: 10px;'>
+        <p> 
+        Para abordar efectivamente una baja fecundidad, los gobiernos suelen implementar políticas pro-natalistas que enfocan una variedad de áreas. 
+        Estas políticas incluyen incentivos económicos directos, como subsidios por nacimiento y beneficios fiscales para familias con hijos, 
+        destinados a reducir los costos asociados con la crianza de niños y hacer más atractivo para las parejas el tener descendencia.
+        </p>
+        <p>
+        Mejorar las condiciones laborales también juega un papel crucial. Esto puede lograrse mediante la implementación de horarios laborales flexibles, 
+        licencias parentales pagadas y el desarrollo de guarderías accesibles y de calidad, lo que permite a los padres equilibrar mejor sus responsabilidades laborales y familiares.
+        </p>
+        <p>
+        No menos importante es garantizar un acceso amplio y accesible a servicios de salud materna e infantil. Esto no solo promueve la salud reproductiva, sino que también brinda seguridad 
+        a las parejas al saber que recibirán el apoyo necesario durante el embarazo y el parto.
+        </p>
+        <p>
+        Culturalmente, promover una mentalidad pro-familia y apoyar la igualdad de género son aspectos esenciales. Fomentar una cultura que valore la maternidad y la paternidad como pilares 
+        fundamentales de la sociedad puede cambiar las actitudes sociales hacia la fecundidad.
+        </p>
+        <p>
+        En conclusión, las tendencias decrecientes en las tasas de fecundidad en Sudamérica están moldeando profundamente la estructura demográfica, económica y social de la región. 
+        Entender los factores detrás de estas tendencias es crucial para formular políticas públicas efectivas que puedan mitigar sus impactos negativos y capitalizar sus posibles beneficios.
+        </p>
+    </div>
+    <br>
+''', unsafe_allow_html=True)
+
+st.markdown('''
+    <div align='center'>
+        <div style="text-align: center; display: inline-block; padding: 10px; border-radius: 10px;">
+            <div style="background-color: rgba(0, 0, 0, 0.7); display: inline-block; padding: 20px; border-radius: 10px;">
+                <a href="https://www.linkedin.com/in/juan-camilo-torres-salas-907749265/" target="_blank">
+                    <img src="https://avatars.githubusercontent.com/u/166193432?v=4" alt="Juan Camilo Torres Salas" width="115" style="border-radius: 50%;">
+                </a>
+                <h5 style="color: white;">Juan Camilo Torres Salas</h5>
+            </div>
+        </div>
+    </div>
+''', unsafe_allow_html=True)
+
+
+
