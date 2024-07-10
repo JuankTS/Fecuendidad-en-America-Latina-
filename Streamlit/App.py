@@ -75,7 +75,7 @@ fig = 'https://raw.githubusercontent.com/JuankTS/Fecuendidad-en-America-Latina-/
 response = requests.get(fig)
 if response.status_code == 200:
     img = response.text  # Obtener el contenido HTML como texto
-    st.components.v1.html(img, height=800)
+    st.components.v1.html(img, height=480)
 else:
     st.error(f"Error al descargar el archivo HTML desde {fig}. Status code: {response.status_code}")
 
@@ -101,7 +101,7 @@ image = f'https://raw.githubusercontent.com/JuankTS/Fecuendidad-en-America-Latin
 resp = requests.get(image)
 if resp.status_code == 200:
     html_content = resp.text  # Obtener el contenido HTML como texto
-    st.components.v1.html(html_content, height=800)
+    st.components.v1.html(html_content, height=480)
 else:
     st.error(f"Error al descargar el archivo HTML desde {image}. Status code: {resp.status_code}")
 
