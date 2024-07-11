@@ -2,7 +2,7 @@
 
 <img align='center' src='https://www.unicef.org/mexico/sites/unicef.org.mexico/files/styles/hero_tablet/public/nof%20acebook%20MR_UNICEF_Yucat%C3%A1n_2012_0034%20%282%29.jpg.webp?itok=j8ecL54P'>
 <br>
-<br>
+
 Las condiciones mundiales en las que vivimos han experimentado cambios significativos desde el siglo pasado, cambios a los que Sudamérica no ha sido ajena y que se han reflejado en los distintos aspectos de nuestra población. Cambios en los aspectos económicos, en nuestro contexto social y cultural, han tenido afectaciones en nuestras variables demográficas. Una de las más importantes para una población es la tasa de fecundidad, la cual se ha visto afectada por toda esta trascendencia, mostrando una reducción de casi el doble en las últimas 4 décadas. Esto trae ciertos acontecimientos que se deben considerar. Por eso, en este proyecto se dedica a hacer un análisis de las tasas de fecundidad en Sudamérica y las repercusiones y efectos sobre nuestra población.
 
 <h2>
